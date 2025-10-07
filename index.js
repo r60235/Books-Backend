@@ -38,8 +38,7 @@ app.get('/books', async (req, res) => {
     const books = await Book.find();
     res.status(200).json(books);
   } catch (err) {
-    res.status(500).json({ error: 'Error fetching books', details: err });
-  }
+    res.status(500).json({ error: 'Error fetching books', details: err.message })  }
 });
 
 // 4. Get book by title
